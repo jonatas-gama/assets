@@ -9,15 +9,19 @@ margin:0;
 padding:0;
 }
 
-#banner{
+html{
+scroll-behavior: smooth;
+}
+
+#think{
 background-color: rgba(22,225,255,0.5);
 }
 
-#secao{
+#code{
 background-color: rgba(225,25,220,0.5);
 }
 
-#crie{
+#create{
 background-color: rgba(5,25,220,0.5);
 }
 
@@ -27,6 +31,14 @@ height:100vh;
 
 p{
 font-size:50px;
+font-family: 'Spartan', sans-serif;
+-webkit-transition: 0.5s;
+}
+
+p:hover{
+opacity:0.5;
+cursor:pointer;
+transition: 0.5s;
 }
 
 .centralizado{
@@ -35,9 +47,15 @@ justify-content: center;
 align-items: center;
 }
 
+footer{
+margin: 5px;
+font-family: 'Spartan', sans-serif;
+font-size:12px;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: rgba(241,241,241, 0.5);
   overflow: hidden;
 }
 
@@ -45,11 +63,12 @@ align-items: center;
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: 'Spartan', sans-serif;
 }
 
 /* Change the color of links on hover */
@@ -60,8 +79,8 @@ align-items: center;
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #ddd;
+  #color: white;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -91,41 +110,51 @@ align-items: center;
     display: block;
     text-align: left;
   }
+  p{
+	font-size: 60px;
+  }
+}
+
+@media screen and (min-width: 600px){
+	.topnav{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 </style>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
 <title>Menu Responsivo</title>
 </head>
 
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  <a href="#think" class="active">Think</a>
+  <a href="#code">Code</a>
+  <a href="#create">Create</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
 
-<div class="centralizado fullpage" id="banner">
+<div class="centralizado fullpage" id="think">
 <p>think</p>
 </div>
 
-<div class="centralizado fullpage" id="secao">
+<div class="centralizado fullpage" id="code">
 <p>code</p>
 </div>
 
-<div class="centralizado fullpage" id="crie">
+<div class="centralizado fullpage" id="create">
 <p>create</p>
 </div>
 
-<footer>
-Jonatas Gama | 2020
+<footer class="centralizado">
+Jonatas Gama | &nbsp <span id="ano"></span>
 </footer>
 
 <script>
@@ -139,6 +168,9 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+let ano = new Date();
+document.getElementById("ano").innerHTML = ano.getFullYear();
 
 </script>
 </body>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgba(255,255,255,0.4);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  #padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  font-family: 'Spartan', sans-serif;
+  -webkit-transition: 0.5s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  #margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+  height:100vh;
+  background-color: rgba(25,255,25,0.3);
+
+}
+
+.centralizado{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+footer{
+#margin: 5px;
+font-family: 'Spartan', sans-serif;
+font-size:12px;
+bottom: 0;
+position: relative;
+width: 100%;
+}
+
+#about{
+background-image: url("img/yoga.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: bottom;
+}
+
+#services{
+background-image: url("img/abacaxi.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#clients{
+background-image: url("img/casal.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: top;
+}
+
+#contact{
+background-image: url("img/pedras.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: top;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.sidenav .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .sidenav a{
+	display: none;
+  }
+  .sidenav a.icon {
+    display: block;
+  }
+  .sidenav{
+	#top:0;
+	width:100%;
+	position: relative;
+  }
+  .main{
+	width:100%;
+	margin: 0;
+  }
+	#clients{
+		background-position: right;
+	}  	
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .sidenav.responsive {
+	position: relative;
+	width:100%;
+	margin-right:15px;
+  }
+  .sidenav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+	margin-right: 20px;
+  }
+  .sidenav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  p{
+	font-size: 60px;
+  }
+}
+
+</style>
+
+<title>Menu Lateral</title>
+</head>
+
+<body>
+
+<!-- Side navigation -->
+<div class="sidenav" id="menu">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!-- Page content -->
+<div class="main" id="about">
+	
+</div>
+
+<div class="main" id="services">
+	
+</div>
+
+<div class="main" id="clients">
+	
+</div>
+
+<div class="main" id="contact">
+	
+</div>
+
+<footer class="centralizado">
+Jonatas Gama | &nbsp<span id="ano"></span>
+</footer>
+
+<script>
+
+function myFunction() {
+  var x = document.getElementById("menu");
+  if (x.className === "sidenav") {
+    x.className += " responsive";
+  } else {
+    x.className = "sidenav";
+  }
+}
+
+let ano = new Date();
+document.getElementById("ano").innerHTML = ano.getFullYear();
+</script>
+</body>
+</html>
